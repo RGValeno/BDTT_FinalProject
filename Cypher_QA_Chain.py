@@ -4,8 +4,8 @@ from langchain_openai import ChatOpenAI
 from langchain_community.graphs import Neo4jGraph
 from langchain.chains import GraphCypherQAChain
 from langchain.prompts import PromptTemplate
-from neo4j import GraphDatabase
 
+# Uncomment the following lines to enable debug logging
 # from neo4j.debug import watch
 # watch("neo4j")
 
@@ -66,4 +66,8 @@ cypher_chain = GraphCypherQAChain.from_llm(
     verbose=True
 )
 
-cypher_chain.invoke({"query": "How many people authored 1 article and who were they?"})
+cypher_chain.invoke({"query": "How many people authored more than 1 article?"})
+
+# cypher_chain.invoke({"query": "Who authored the most articles and how many?"})
+
+# cypher_chain.invoke({"query": "Who authored the second most articles and how many?"})
