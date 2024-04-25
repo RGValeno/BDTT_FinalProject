@@ -66,4 +66,4 @@ cypher_chain = GraphCypherQAChain.from_llm(
     verbose=True
 )
 
-cypher_chain.invoke({"query": "Who authored the most articles?"})
+cypher_chain.invoke({"query": "How many people authored 1 article and who were they?"})
